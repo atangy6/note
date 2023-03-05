@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+           position: absolute;
+           left: 0;
+           height: 100px;
+           width: 100px;
+           background-color: rgb(150, 209, 219);
+       }
+        span{
+           position: absolute;
+           left: 0;
+           display: block;
+           width: 50px;
+           height: 50px;
+           background-color: rgb(190, 143, 209);
+           /* z-index: 1; */
+       }
+   </style>
+</head>
+<body>
+    <button class="b5">点击1</button>
+    <button class="b8">点击2</button>
+    <div></div>
+    <span></span>
+    <script>
+        function animate(obj,target){
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                //步长值写到定时器里面
+                // 把步长值改为整数不要出现小数
+                // var step=Math.ceil((target-obj.offsetLeft) / 10);
+                var step=(target-obj.offsetLeft) / 10;
+                step=step>0?Math.ceil(step):Math.floor(step);
+                if(obj.offsetLeft==target){
+                    // 停止动画
+                    clearInterval(obj.timer);//取消setInterval()建立的定时器
+                }
+            obj.style.left=obj.offsetLeft+step+'px';//返回当前元素相对于其 offsetParent 元素的左边距的距离。
+        },30);
+        }
+
+        var div=document.querySelector('div');
+        var span=document.querySelector('span');
+        var btn5=document.querySelector('.b5');
+        var btn8=document.querySelector('.b8');
+        // 调用函数
+        animate(div,500);
+        btn5.addEventListener('click',function(){
+            animate(span,500);
+        })
+        btn8.addEventListener('click',function(){
+            animate(span,800);
+        })
+    </script>
+</body>
+</html>

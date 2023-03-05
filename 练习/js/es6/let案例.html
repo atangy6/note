@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            height: 60px;
+            margin: 100px auto;
+            background-color: rgb(238, 249, 225);
+        }
+        .item{
+            width: 100px;
+            border: 2px solid rgb(197, 135, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        let items=document.querySelectorAll('.item');
+        for(let i=0;i<items.length;i++){
+            items[i].onclick=function(){
+                items[i].style.background='pink'
+                // this.style.background='pink'
+            }
+        }
+    </script>
+</body>
+</html>

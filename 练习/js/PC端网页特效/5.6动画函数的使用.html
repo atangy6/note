@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <title>引用animate动画函数</title>
+         <script src="5.5animate.js"></script>
+         <style>
+             .sliderbar{
+                 position: fixed;
+                 right: 0px;
+                 bottom: 100px;
+                 width: 40px;
+                 height: 40px;
+                 text-align: center;
+                 line-height: 40px;
+                 cursor: pointer;
+                 color: rgb(36, 61, 55);
+             }
+             .con{
+                 position: absolute;
+                 left: 0;
+                 top: 0;
+                 width: 200px;
+                 height: 40px;
+                 background-color: rgb(98, 196, 187);
+                 z-index: -1;
+             }
+         </style>
+     </head>
+     <body>
+         <div class="sliderbar">
+             <span>←</span>
+             <div class="con">问题反馈</div>
+         </div>
+         <script>
+             // 1.获取元素
+             var sliderbar = document.querySelector('.sliderbar');
+             var con = document.querySelector('.con');
+            //  var span = document.querySelector('span');
+             // 当我们鼠标经过sliderbar就会让con这个盒子滑动到左侧
+             // 当我们鼠标离开sliderbar就会让con这个盒子滑动到右侧
+             sliderbar.addEventListener('mouseenter',function(){
+                 // animate(obj, target, callback)
+                 animate(con, -160, function(){
+                     // 当动画执行完毕，更改箭头方向
+                     sliderbar.children[0].innerHTML = '→';     // 或者直接sliderbar.children[0].innerHTML ='';
+                 });
+             })
+             sliderbar.addEventListener('mouseleave',function(){
+                 animate(con, 0, function(){
+                    sliderbar.children[0].innerHTML = '←';
+                 });
+             })
+         </script>
+     </body>
+ </html>

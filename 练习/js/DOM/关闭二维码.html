@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 100px;
+            margin: 100px auto;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #ccc;
+        }
+        .box img{
+            width: 90px;
+            margin-top: 5px;
+        }
+        .close-btn{
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            line-height: 14px;
+            cursor: pointer;/*光标为一只手*/
+        }
+        .close-btn:hover{
+            background-color: red;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        二维码
+        <img src="../../images/wx_cz.jpg" alt="">
+        <i class="close-btn">X</i>
+    </div>
+    <script>
+        //获取元素
+        var btn=document.querySelector('.close-btn');
+        var box=document.querySelector('.box');
+        //注册事件 处理程序
+        btn.onclick=function(){
+            box.style.display='none';//隐藏box盒子
+        }
+    </script>
+</body>
+</html>

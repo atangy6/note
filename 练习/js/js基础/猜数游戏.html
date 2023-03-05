@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math.random()</title>
+    <script>
+        //声明函数
+        function getRandom(min,max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        //调用函数
+        var random=getRandom(1,10);
+        while(true){//死循环
+            var num=prompt('你来猜1~10');
+            if(num>random){
+                alert('你猜大了');
+            }else if(num<random){
+                alert('你猜小了');
+            }else{
+                alert('你猜对了');
+                break;//退出整个循环
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        .box{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;  
+        }
+        li{
+            list-style: none;
+        }
+        .pi{
+            border-radius: 20px; /* 图片边角弧度 */
+            }
+        .prev{
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute; /* 加了绝对定位的盒子可以直接设置宽度和高度 */
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            border-radius: 0 15px 15px 0;
+        }
+        .next{
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute; /* 加了绝对定位的盒子可以直接设置宽度和高度 */
+            right: 0;
+            top: 50%;
+            margin-top: -15px;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            border-radius:  15px 0 0 15px;
+        }
+        .nav{
+            position: absolute;
+            width: 70px;
+            height: 13px;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            background-color: rgba(255, 255, 255,.5);
+            border-radius: 7px;
+        }
+        .nav li{
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            float: left;
+            margin: 3px;
+        }
+        li:hover{
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/TB1gjpg.jpg" alt="" class="pi">
+        <a href="#" class="prev">&lt;</a><!-- 左侧按钮 -->
+        <a href="#" class="next">&gt;</a><!-- 右侧按钮 -->
+        <ul class="nav">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul><!-- 小圆点 -->
+    </div>
+</body>
+</html>

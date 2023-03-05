@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 188, 188);
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box=document.querySelector('.box');
+        box.addEventListener('mousemove',function(e){//鼠标移动触发  e事件对象
+            // console.log(e.pageX);//鼠标事件对象
+            // console.log(e.pageY);//返回鼠标相对于文档页面的Y坐标
+            // console.log(box.offsetLeft);
+            var x=e.pageX-this.offsetLeft;
+            var y=e.pageY-this.offsetTop;
+            this.innerHTML='x坐标是'+x+' y坐标是'+y;
+        })
+    </script>
+</body>
+</html>

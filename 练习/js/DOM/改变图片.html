@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="w">陆光</button>
+    <button id="b">程小时</button>
+    <br>
+    <img src="../../images/R-C.jpg" alt="" title="陆光">
+    <script>
+        //获取元素属性
+        var w=document.getElementById('w');
+        var b=document.getElementById('b');
+        var img=document.querySelector('img');
+        //注册事件 处理程序
+        b.onclick=function(){
+            img.src='../../images/OIP-C.jpg';
+            img.title='程小时';
+        }
+        w.onclick=function(){
+            img.src='../../images/R-C.jpg';
+            img.title='陆光';
+        }
+    </script>
+</body>
+</html>

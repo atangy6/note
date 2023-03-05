@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本列表</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        v-for指令
+            1.用于展示列表数据
+            2.语法：v-for="(item, index) in xxx" :key="yyy"
+            3.可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）
+     -->
+    <div id="root">
+        <!-- 遍历数组 -->
+        <h2>人员列表</h2>
+        <ul>
+            <li v-for="(p,index) in persons" :key="index">
+                {{p.name}}-{{p.age}}
+            </li>
+        </ul>
+        <!-- 遍历对象 -->
+        <h2>汽车信息</h2>
+        <ul>
+            <li v-for="(value,k) in car" :key="k">
+                {{k}}-{{value}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+
+    new Vue({
+        el:'#root',
+        data:{
+            persons:[
+                {
+                    id:'0001',
+                    name:'张三',
+                    age:'18'
+                },
+                {
+                    id:'0002',
+                    name:'李四',
+                    age:'18'
+                },
+                {
+                    id:'0003',
+                    name:'王五',
+                    age:'18'
+                },
+            ],
+            car:{
+                name:'奥迪A8',
+                price:'70万',
+                color:'黑色'
+            }
+        }
+    })
+</script>
+</html>

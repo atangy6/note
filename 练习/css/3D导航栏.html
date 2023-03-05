@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 100px;
+        }
+        ul li{
+            list-style: none;
+            width: 120px;
+            height: 35px;
+            perspective:500px;/* 透视 */
+        }
+        .box{
+            position: relative;
+            width: 120px;
+            height: 35px;
+            transform-style: preserve-3d ; /* 子元素开启立体空间 */
+            transform: translate3d(17.5,17.5,17.5);
+            transition:all 2s ;/* 过渡，谁做过渡给谁加 */
+        }
+        .box:hover{
+            transform: rotateX(90deg);
+        }
+        .front,.bottom{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 35px;
+        }
+        .front{
+            background-color: rgb(47, 187, 223);
+            z-index: 1;/* 使第一个盒子在上面 */
+            /* 注意沿立方体的中心点旋转 */
+            transform: translateZ(17.5px);
+        }
+        .bottom{
+            background-color: rgb(238, 145, 204);
+            transform:translateY(17.5px) rotateX(-90deg); /* 第二个盒子沿Y轴往下走,再沿X轴旋转90度 */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front"></div>
+                <div class="bottom"></div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

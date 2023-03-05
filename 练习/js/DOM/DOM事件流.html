@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(216, 177, 177);
+            margin: 100px auto;
+        }
+        .son{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(156, 221, 233);
+        }
+    </style>
+</head>
+<body>
+   <div class="father">
+       <div class="son">son盒子</div>
+       </div>
+   </div>
+   <script>
+     var son=document.querySelector('.son');
+     son.addEventListener('click',function(){
+         alert('son');
+     });
+     var father=document.querySelector('.father');
+     father.addEventListener('click',function(){
+         alert('father');
+     },true);
+   </script>
+</body>
+</html>

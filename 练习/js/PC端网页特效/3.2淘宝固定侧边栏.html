@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1000px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        .slider-bar {
+            position: absolute;
+            left: 50%; /*让盒子的左侧移动到父级元素的水平中心位置*/
+            top: 300px;
+            margin-left: 500px;/*往右移w的一半*/
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        //1.获取元素
+        var sliderbar=document.querySelector('.slider-bar');
+        var banner=document.querySelector('.banner');
+        // HTMLElement.offsetTop 为只读属性，它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。
+        // banner.offsetTop就是被卷去的头部大小
+        // console.log(banner.offsetTop);
+        var bannerTop=banner.offsetTop;
+        var sliderbarTop=sliderbar.offsetTop-bannerTop;
+
+        // 获取main主体元素
+        var main=document.querySelector('.main');
+        var goBack=document.querySelector('.goBack');
+        var mainTop=main.offsetTop;//main距离顶部内边距的距离
+
+        // 2.页面滚动事件
+        // 页面的滚动距离通过window.pageYOffset获得
+        document.addEventListener('scroll',function(){
+            // window.pageYOffset页面被卷去的头部
+            console.log(window.pageYOffset);
+            // 3.当页面被卷去的头部>=170此时侧边栏就要改为固定定位
+            // 固定定位是元素固定于浏览器的可视区的位置 以浏览器的可视窗口为参照点移动元素
+            if(window.pageYOffset>=bannerTop){
+                sliderbar.style.position='fixed';
+                sliderbar.style.top=sliderbarTop+'px';
+            }else{
+                sliderbar.style.position='absolute';
+                sliderbar.style.top='300px';
+            }
+            // 4.当页面滚动到main盒子就显示goBack
+            if(window.pageYOffset>=mainTop){
+                goBack.style.display='block'
+            }else{
+                goBack.style.display='none'
+            }
+            })
+    </script>
+</body>
+</html>

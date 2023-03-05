@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="begin">开启定时</button>
+    <button class="stop">停止定时</button>
+    <script>
+        // clearInterval ( ) 方法取消了先前通过调用 setInterval() 建立的定时器
+        // window可以省略
+        var begin=document.querySelector('.begin');    
+        var stop=document.querySelector('.stop');
+        var timer=null;//全局变量
+        begin.addEventListener('click',function(){
+            timer=setInterval(function(){//特殊情况下，在函数内不使用var声明的变量也是全局变量
+                console.log('你好');
+            },3000)
+        });
+        stop.addEventListener('click',function(){
+            clearInterval(timer);//取消setInterval()建立的定时器
+        })
+    </script>
+</body>
+</html>

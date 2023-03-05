@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #f1d193;
+  background-color: #e0aeae;
+}
+.header a {
+  color: #485391;
+}
+.header a:hover {
+  color: #000;
+}
+.nav .logo {
+  color: aquamarine;
+}
+.nav::before {
+  content: "";
+}
+img {
+  width: 30rem;
+  height: 20rem;
+}

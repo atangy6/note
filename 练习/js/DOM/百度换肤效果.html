@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url(../../images/a.jpeg) no-repeat center top;
+            background-size: cover;/*背景大小*/
+        }
+        .box{
+            width: 300px;
+            display: flex;
+            margin: 100px auto;
+        }
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../../images/a.jpeg" alt="">
+        <img src="../../images/b.webp" alt="">
+        <img src="../../images/c.webp" alt="">
+    </div>
+    <script>
+        var imgs=document.querySelector('.box').querySelectorAll('img');
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].onclick=function(){
+                //改变图片
+                document.body.style.backgroundImage='url('+this.src+')';//document.body;获取body元素
+            }
+        }
+    </script>
+</body>
+</html>

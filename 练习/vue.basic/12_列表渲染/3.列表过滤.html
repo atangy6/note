@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本列表</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- 遍历数组 -->
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输入名字" v-model="keyWord">
+        <ul>
+            <li v-for="(p,index) in persons" :key="index">
+                {{p.name}}-{{p.age}}-{{p.sex}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+
+    new Vue({
+        el:'#root',
+        data:{
+            keyWord:'', 
+            persons:[
+                {id:'0001',name:'马冬梅',age:'18',sex:'女'},
+                {id:'0002',name:'周冬雨',age:'19',sex:'女'},
+                {id:'0003',name:'周杰伦',age:'20',sex:'男'},
+                {id:'0004',name:'温兆伦',age:'21',sex:'男'},
+            ],
+        },
+        watch:{
+            keyWord(val){
+                this.persons=this.persons.filters((p)=>{
+                    return p.name.indexOf(val)
+                })
+            }
+        }
+    })
+</script>
+</html>

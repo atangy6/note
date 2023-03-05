@@ -1,0 +1,290 @@
+body{
+    max-width: 540px;
+    min-width: 320px;
+    /* 使body居中 */
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma;
+    color: #000;
+    background: #f2f2f2;
+    /* 溢出隐藏 */
+    overflow-x: hidden;
+    -webkit-tap-highlight-color:transparent;
+    height: 2000px;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+h2,ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+div{
+    box-sizing: border-box;
+}
+.goBack{
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background: url(../images/260.jpg) no-repeat;
+    background-size: 38px 38px;
+}
+/* 搜索模块 */
+.search-index{
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    /* 固定的盒子应该有宽度 */
+    width: 100%;
+    height: 44px;
+    max-width: 540px;
+    min-width: 320px;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.search{
+    flex: 1;
+    height: 26px;
+    margin: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 26px;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+.search::before{
+    content: "";
+    display: inline-block;
+    /* 和文字垂直对齐，只针对于行内元素或者行内块元素有效 */
+    vertical-align:middle;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+    margin: 4px;
+}
+.user{
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+.user::before{
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto 0;
+}
+/* 上边盒子是固定定位不占位置，下边是标准流 */
+.focus{
+    position: relative;
+    margin-top: 44px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.focus ul{
+    width: 500%;
+    /* ul没有高度li又有浮动影响其他盒子要清除浮动 */
+    overflow: hidden;
+    margin-left: -100%;
+}
+.focus ul li{
+   float: left;
+   width: 20%;
+}
+.focus img{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.focus ol{
+    margin: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.focus ol li{
+    width: 5px;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    list-style: none;
+    display: inline-block;
+    border-radius: 3px;
+    transition: all .3s;
+}
+.focus ol .current{
+    width: 15px;
+}
+
+/* 局部导航栏 */
+.local-nav{
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+.local-nav li{
+    flex:1;
+}
+.local-nav a{
+    display: flex;
+    /* 主轴为y轴 */
+    flex-direction: column;
+    /* 侧轴上的子元素居中对齐 */
+    align-items:center;
+    font-size: 12px;
+}
+.local-nav li [class^="local-nav-icon"]{
+    width: 32px;
+    height: 32px;
+    background-color: rgb(138, 11, 11);
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    /* 二倍图的精灵图缩放 */
+    background-size: 32px auto;
+}
+.local-nav li .local-nav-icon-icon2{
+    background-position: 0 -32px;
+}
+.local-nav li .local-nav-icon-icon3{
+    background-position: 0 -64px;
+}
+.local-nav li .local-nav-icon-icon4{
+    background-position: 0 -96px;
+}
+.local-nav li .local-nav-icon-icon5{
+    background-position: 0 -128px;
+}
+/* nav */
+nav{
+   /* 溢出隐藏  */
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+}
+.nav-common{
+    display: flex;
+    height: 88px;
+}
+.nav-common:nth-child(1){
+    /* background-image: linear-gradient(to right,#FA5A55,#FA994D); */
+    background: -webkit-linear-gradient(left,#FA5A55,#FA994D);
+}
+.nav-common:nth-child(2){
+    /* background-image: linear-gradient(to right,#FA5A55,#FA994D); */
+    background: -webkit-linear-gradient(left,#4b90ed,#53bced);
+}
+.nav-common:nth-child(3){
+    /* background-image: linear-gradient(to right,#FA5A55,#FA994D); */
+    background: -webkit-linear-gradient(left,#34c2a9,#6cd559);
+}
+
+.nav-common:nth-child(2){
+    margin: 3px 0;
+}
+.nav-items{
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0,0,0,.2);
+}
+.nav-items:nth-child(-n+2){
+    border-right: 1px solid #fff;
+}
+.nav-items a{
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+}
+.nav-items a:nth-child(1){
+    border-bottom: 1px solid #fff;
+}
+.nav-common:nth-child(1) .nav-items:nth-child(1) a{
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+/* 更换图片 */
+.nav-common:nth-child(2) .nav-items:nth-child(1) a{
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+.nav-common:nth-child(3) .nav-items:nth-child(1) a{
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+/* 侧导航栏 */
+.subnav-entry{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    padding: 5px 0;
+}
+.subnav-entry li{
+    flex:20%;
+}
+.subnav-entry li a{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.subnav-entry-icon{
+    width: 28px;
+    height: 28px;
+    background:url(../images/subnav-bg.png)no-repeat;
+    background-size: 28px auto;
+}
+/* 销售模块 */
+.sales-box{
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    margin: 4px;
+}
+.sales-hd{
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+/* .sales-hd h2{ */
+    /* position: relative; */
+    /* text-indent: -999px; */
+    /* overflow: hidden; */
+/* } */
+.sales-hd h2{
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+.more{
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    background: -webkit-linear-gradient(left,#ff506c,#ff6bc6);
+    border-radius: 8px;
+    padding: 3px 20px 3px 10px;
+}

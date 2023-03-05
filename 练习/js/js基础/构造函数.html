@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script>
+        function Star(uname,age){
+            this.name=uname;
+            this.age=age;
+            this.xz=function(xz){
+                console.log(xz);
+            }
+        }
+        var jsy=new Star('简',28);
+        console.log(jsy.name);
+        console.log(jsy.age);
+        jsy.xz('狮子');
+        var ly=new Star('李',21);
+        console.log(ly.name);
+        console.log(ly.age);
+        ly.xz('水瓶');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

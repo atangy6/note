@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 创建类 class  创建一个明星类
+        class Star{
+        // constructor 构造器或者构造函数
+        // 类的共有属性放到constructor里
+            constructor(uname,age){
+                this.uname=uname;
+                this.age=age;
+            }
+           say(s){
+            //    console.log('你好')
+            console.log(this.uname+s)
+
+           }
+        }
+        // 2. 利用类创建对象 new
+        var lcx=new Star('li',30);
+        var sq=new Star('shao',26);
+        console.log(lcx);
+        console.log(sq);
+
+        // (1)类里面所有的函数不需要写function
+        // (2)多个函数方法之间不需要添加逗号分割
+        lcx.say('你好');
+        sq.say('你好');
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+             margin: 0;
+            padding: 0;}
+        .box{
+            width: 520px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;  
+        }
+        .box img{
+            width: 100%;
+            height: 100%;
+        }/* 使图片和盒子一样大 */
+        .mask{
+            width: 100%;
+            height: 100%;
+            display: none;/* 隐藏遮罩层 */
+            background-color: rgba(0,0,0,.3);
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
+        .box:hover .mask{
+           display: block; 
+           /* 显示遮罩层 */
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/TB1gjpg.jpg" alt="">
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

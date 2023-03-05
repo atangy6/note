@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>显示格式化后的时间</h2>
+        <h3>现在是{{time}}</h3>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+
+    new Vue({
+        el:'#root',
+        data:{
+            time:1656985320089,//时间戳
+        }
+    })
+</script>
+</html>

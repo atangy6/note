@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../../images/a.jpeg" alt="">
+    <div>上午好</div>
+
+    <script>
+        //获取元素
+        var imgs=document.querySelector('img');//根据指定选择器返回第一个元素对象 
+        var divs=document.querySelector('div');
+        //得到当前的小时数
+        var date=new Date();
+        var h=date.getHours();
+        //判断小时数改变图片和文字信息
+        if(h<12){
+            imgs.src='../../images/a.jpeg';
+            divs.innerHTML='上午好！';
+        }else if(h<18){
+            imgs.src='../../images/b.webp';
+            divs.innerHTML='下午好！';
+        }else{
+            imgs.src='../../images/c.webp';
+            divs.innerHTML='晚上好！';
+        }
+        //没有事件
+    </script>
+</body>
+</html>

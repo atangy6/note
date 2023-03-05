@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+    <script>
+        //每一行的行数等于列数。即j<=i
+        var row=prompt('请输入行数');
+        var col=prompt('请输入列数');
+        var str='';
+        for(var i=1;i<=row;i++){//控制行数
+            for(var j=1;j<=i;j++){//控制每行的个数
+               str+=j+'✕'+i+'='+i*j;
+            }
+            str=str+'\n';
+        }
+       alert(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

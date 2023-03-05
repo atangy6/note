@@ -1,0 +1,28 @@
+@border:5px+5;
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border:@border solid rgb(241, 209, 147);
+    background-color: rgb(224, 174, 174);
+    a{
+        color: rgb(72, 83, 145);
+        &:hover{
+            color: #000;
+        }
+    }
+}
+.nav{
+    .logo{
+        color: aquamarine;
+    }
+    &::before{
+        content:"";
+    }
+}
+img{
+    width:30rem;
+    height: 20rem;
+}

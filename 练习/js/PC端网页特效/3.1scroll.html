@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(165, 218, 209);
+            margin: 50px auto;
+            border: 10px solid rgb(204, 204, 204);
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius quas provident tenetur itaque, error nostrum at obcaecati consequuntur facilis. Perspiciatis quos adipisci illo magnam vel modi! Rerum ratione voluptatibus nemo.
+    </div>
+    <script>
+        //scrollHeight返回自身实际高度，不含边框
+        var div=document.querySelector('div');
+        console.log(div.scrollHeight);//248
+        console.log(div.clientHeight);//200
+        //scroll滚动事件 
+        //当我们滚动条发生变化会触发的事件
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop);//拉动滚动条数值产生变化
+        })
+        //scrollTop 返回被卷去的上侧距离
+        //scrollLeft 返回被卷去的左侧距离
+
+        // 滚动窗口至文档中的特定位置 x,y不加单位
+        // window.scroll(0,0);
+    </script>
+</body>
+</html>

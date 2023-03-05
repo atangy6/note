@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(216, 177, 177);
+            margin: 100px auto;
+        }
+        .son{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(156, 221, 233);
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <div class="father">
+        <div class="son">son盒子</div>
+        </div>
+    </div>
+    <a href="https://www.baidu.com/">百度</a>
+    <script>
+        //事件对象的常见属性和方法
+        //1、e.target	返回触发事件的对象
+        var div=document.querySelector('div');
+        div.addEventListener('click',function(e){
+            console.log(e.target);
+        })
+        //2、阻止默认行为
+        var a=document.querySelector('a');
+        a.addEventListener('click',function(e){//注册事件
+            e.preventDefault();
+        })
+        //传统注册方式 阻止默认行为
+        a.onclick=function(e){
+            e.preventDefault();
+        }
+        //3、阻止冒泡
+        var son=document.querySelector('.son');
+        son.addEventListener('click',function(e){
+             alert('son');
+             e.stopPropagation();//e.stopPropagation()阻止冒泡
+        });
+        var father=document.querySelector('.father');
+         father.addEventListener('click',function(){
+             alert('father');
+         });
+    </script>
+</body>
+</html>

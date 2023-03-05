@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(233, 222, 187);
+            border: 10px solid rgb(164, 233, 218);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //clientWidth和offsetwidth最大的区别是 client不包含边框
+        var div=document.querySelector('div');
+        console.log(div.clientWidth);//200  不包含边框
+        console.log(div.offsetWidth);//220
+        // clientTop返回元素上边框的大小
+        console.log(div.clientTop);//10
+        // clientLeft返回元素左边框的大小
+        console.log(div.clientLeft);//10
+    </script>
+</body>
+</html>

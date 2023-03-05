@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            box-sizing: border-box;
+        }
+        .tab{
+            width: 500px;     
+            margin: 100px auto;
+           
+        }
+        .tab_list{
+           
+            background-color: rgb(245, 239, 239);
+            border: 1px solid #ccc;
+           
+        }
+        .tab_list ul{
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+        }
+        .tab_list ul li{
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            /* 将ul平分5等份 */
+            flex: 1;
+        }
+        .tab_list ul .current{
+            background-color: red;
+            color: #fff;
+        }
+        .tab_con .item:nth-child(n+2){ 
+            /* 从第二个开始 */
+            display: none; 
+        } 
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li><span>规格</span></li>
+                <li><span>售后</span></li>
+                <li><span>评价</span></li>
+                <li><span>社区</span></li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block">
+            商品介绍模块内容
+            </div>
+            <div class="item">
+                规格模块内容
+            </div>
+            <div class="item">
+                售后模块内容
+            </div>
+            <div class="item">
+                评价模块内容
+            </div>
+            <div class="item">
+                社区模块内容
+            </div>
+        </div>
+    </div>
+    <script>
+        //获取元素
+        var tab_list=document.querySelector('.tab_list');
+        var lis=document.querySelectorAll('li');
+        var items=document.querySelectorAll('.item');
+        //for循环绑定点击事件
+        for(var i=0;i<lis.length;i++){
+            lis[i].setAttribute('index',i);//设置自定义的属性,给所有的li添加自定义属性，i为0,1,2,3,4
+            //排他思想
+            lis[i].onclick=function(){
+
+                //1.点击导航栏变色
+                //干掉所有人
+                for (var i = 0; i < lis.length; i++) {//遍历数组
+                    lis[i].className='';
+                }
+                //留下我自己
+                this.className='current';//this指lis[i]
+
+                //2.不同导航栏对应的内容
+                //排他思想
+                var index=this.getAttribute('index');//获取自定义的属性//this指lis[i]
+                for(var i=0;i<items.length;i++){
+                    //干掉所有人
+                    items[i].style.display="none"
+                    }
+                //留下我自己
+                items[index].style.display='block';
+            }
+        }
+    </script>
+</body>
+</html>

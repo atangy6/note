@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        M：模型(Model) ：data中的数据
+        V：视图(View) ：模板代码（不是静态页面） （两个语法：指令，大括号表达式）
+        VM：viewModel: 视图模型（Vue的实例）
+            Dom Listeners （Dom 监听）
+            Data Bindings （数据绑定）
+
+        data中所有的属性，最后都出现在了vm身上。
+        vm身上所有的属性 及 Vue原型上所有属性，在Vue模板中都可以直接使用。
+     -->
+
+    <div id="root">
+        <h1>学校名称：{{name}}</h1>
+        <h1>学校地址：{{address}}</h1>
+    </div> <!-- Viev -->
+</body>
+<script>
+    Vue.config.productionTip=false//设置为 false 以阻止 vue 在启动时生成生产提示。
+    const vm=new Vue({//ViewModel
+        el:'#root',
+        data:{
+            name:'张三',
+            address:'北京'
+        }//Model
+    })
+    console.log(vm);
+</script>
+</html>

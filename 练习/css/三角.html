@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 0;
+            height: 0;
+            border-top: 100px solid transparent;
+            border-bottom: 0 solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 50px solid thistle;
+/* 上边框宽度大，下边框为0，做边框为0，右边宽度稍小 */
+        }
+        .price{
+            width: 150px;
+            height: 50px;
+            margin: 0 auto;
+            border-color: blueviolet;
+            border: 1px solid;
+            text-align: center;
+            line-height: 50px;
+            
+        }
+        .new{
+            position: relative;
+            width: 90px;
+            height: 50px;
+            background-color: red;
+            float: left;/* span是行内元素，浮动元素会具有行内块元素特性，可设置宽高*/
+            color: #fff;
+            font-weight: 700;/* 文字加粗 */
+        }
+        i{
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-color: transparent rgb(255, 255, 255) transparent transparent;
+            border-style: solid;
+            border-width: 50px 15px 0 0;
+            right: 0;
+            top: 0;
+        }
+        .old{
+            color: gray;
+            text-decoration: line-through;/* 删除线 */
+            font-size: 12px; 
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <div class="box1"></div>
+    <div class="price">
+        <span class="new">￥99
+            <i></i>
+        </span>
+        <span class="old">￥100</span>
+    </div>
+</body>
+</html>

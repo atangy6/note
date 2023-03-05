@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 同步任务
+        // 同步任务都在主线程上执行，形成一个执行栈
+
+        // 异步任务
+        // JS中的异步是通过回调函数实现的
+        // 异步任务有以下三种类型
+        // 1.普通事件，如click,resize等
+        // 2.资源加载，如load,error等
+        // 3.定时器，包括setInterval,setTimeout等
+        // 4.异步任务相关回调函数添加到任务队列中
+
+        console.log(1);
+        setTimeout(function(){
+            console.log(3);
+        },0);
+        console.log(2);//1 2 3
+        // 先执行 执行栈 中的同步任务
+        // 异步任务(回调函数)放入 任务队列 中
+        // 一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 生成器是一种可以用来控制迭代器（iterator）的函数，它可以随时暂停，并可以在任意时候恢复。
+        // return 会在完成函数调用后简单地将值返回，在 return 语句之后你无法进行任何操作。
+        // 用 yield 返回的值只会返回一次，当你再次调用同一个函数的时候，它会执行至下一个 yield 语句处
+        // 在生成器中，不仅可以使用 yield，也可以使用 return 来返回同样的对象。但是，在函数执行到第一个 return 语句的时候，生成器将结束它的工作。
+        function ab(a) {
+            let b = 5;
+            return a + b;
+            b = 6; // 不可能重新定义 b 了
+            return a * b;// 这儿新的值没可能返回了
+        };
+        var re = ab(6);
+        console.log(re); // 11
+        var re = ab(6);
+        console.log(re); // 11
+
+        // yield
+        function* withYield(a) {
+            let b = 5;
+            yield a + b;
+            b = 6; // 在第一次调用后仍可以重新定义变量
+            yield a * b;
+        }
+        const calcSix = withYield(6);
+        console.log(calcSix.next()); // 11
+        console.log(calcSix.next().value); // 36
+        // next 方法
+        // yield表达式本身没有返回值，或者说总是返回undefined。next方法可以带一个参数，该参数就会被当作上一个yield表达式的返回值。
+
+         
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            border-top: 3px solid #ff8500;/*上边框*/
+            border-bottom: 1px solid #edeef0;/*下边框*/
+            background-color: rgb(211, 201, 201);/*背景色*/
+            height: 41px;/*盒子高度*/
+            line-height: 41px;/*行高*/
+        }
+        .nav a{
+            display: inline-block;/*a属于行内元素此时必须转换为行内块元素*/
+            font-size: 12px;/*字体大小*/
+            text-decoration: none;/*取消下划线*/
+            padding: 0 20px;/*内边距*/
+            color: #4c4c4c;
+            height: 41px;/*a的盒子高度*/
+        }
+   .nav a:hover{
+       background: #eee;/*a盒子的背景色*/
+       color: #ff8500;
+
+   }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+    </div>
+
+     
+</body>
+</html>
